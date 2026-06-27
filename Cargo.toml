@@ -1,0 +1,12 @@
+[workspace]
+resolver = "3"
+
+# Glob: todo exercício novo criado dentro destas pastas entra
+# no workspace automaticamente — não precisa editar este arquivo.
+# Crie um exercício novo com, por exemplo:
+#   cargo new --vcs none codewars/nome-do-kata
+#   cargo new --vcs none rust-book/cap03-variaveis
+members = [
+    "rust-book/*",
+    "codewars/*",
+]

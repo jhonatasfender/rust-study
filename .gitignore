@@ -1,0 +1,6 @@
+# Artefatos de build do Cargo (compartilhados na raiz pelo workspace)
+/target
+
+# Backups e arquivos temporários
+*.bak
+*~
