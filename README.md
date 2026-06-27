@@ -40,6 +40,33 @@ cargo build
 cargo test
 ```
 
+## Guardando várias versões (sem perder código)
+
+Quando um exercício tem etapas/tentativas que você quer preservar, **não use
+arquivos `bkp-*.rs` soltos em `src/`** — o Cargo os ignora, eles nunca compilam
+e podem quebrar sem aviso.
+
+Use a pasta `examples/`: cada arquivo com `fn main()` vira um programa rodável
+que **continua sendo compilado** (`cargo build --examples`), então nunca apodrece.
+Convenção: prefixo numérico por etapa.
+
+```
+cap02-jogo-adivinhacao/
+├── src/main.rs              # versão atual/final
+└── examples/
+    ├── 01-ler-palpite.rs    # etapa: só lê o palpite
+    └── 02-numero-secreto.rs # etapa: gera o número secreto
+```
+
+Rodar uma versão específica:
+
+```bash
+cargo run --example 01-ler-palpite
+```
+
+> O git é a rede de segurança principal: nada que já foi commitado se perde.
+> O `examples/` complementa, deixando as versões visíveis e sempre compilando.
+
 ## Progresso
 
 ### Rust Book (pt-br)
