@@ -17,10 +17,8 @@ fn main() {
         io::stdin().read_line(&mut palpite)
             .expect("Falha ao ler entrada!");
 
-        let palpite: u32 = match palpite.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
-        };
+        let palpite: u32 = palpite.trim().parse()
+            .expect("Por favor, digite um número!");
 
         println!("Você disse: {}", palpite);
 
